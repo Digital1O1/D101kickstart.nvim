@@ -147,6 +147,15 @@ do
   vim.o.splitright = true
   vim.o.splitbelow = true
 
+  -- Spacing stuff
+  vim.opt.expandtab = true
+  vim.opt.tabstop = 2
+  vim.opt.shiftwidth = 2
+  vim.opt.softtabstop = 2
+
+  vim.o.relativenumber = true
+
+
   -- Sets how neovim will display certain whitespace characters in the editor.
   --  See `:help 'list'`
   --  and `:help 'listchars'`
@@ -472,7 +481,8 @@ do
   -- - sd'   - [S]urround [D]elete [']quotes
   -- - sr)'  - [S]urround [R]eplace [)] [']
   require('mini.surround').setup()
-
+  require('mini.surround').setup()
+  require('mini.pairs').setup()
   -- Simple and easy statusline.
   --  You could remove this setup call if you don't like it,
   --  and try some other statusline plugin
