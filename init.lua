@@ -84,6 +84,12 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- Lazy stuff
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+vim.opt.rtp:prepend(lazypath)
+
+
+
 -- ============================================================
 -- SECTION 1: OPTIONS
 -- Core Neovim settings, leaders, options
@@ -146,15 +152,6 @@ do
   -- Configure how new splits should be opened
   vim.o.splitright = true
   vim.o.splitbelow = true
-
-  -- Spacing stuff
-  vim.opt.expandtab = true
-  vim.opt.tabstop = 2
-  vim.opt.shiftwidth = 2
-  vim.opt.softtabstop = 2
-
-  vim.o.relativenumber = true
-
 
   -- Sets how neovim will display certain whitespace characters in the editor.
   --  See `:help 'list'`
@@ -481,8 +478,7 @@ do
   -- - sd'   - [S]urround [D]elete [']quotes
   -- - sr)'  - [S]urround [R]eplace [)] [']
   require('mini.surround').setup()
-  require('mini.surround').setup()
-  require('mini.pairs').setup()
+
   -- Simple and easy statusline.
   --  You could remove this setup call if you don't like it,
   --  and try some other statusline plugin
@@ -1030,6 +1026,9 @@ do
   -- require 'kickstart.plugins.lint'
   -- require 'kickstart.plugins.autopairs'
   -- require 'kickstart.plugins.neo-tree'
+  require 'custom.plugins.codecompanion'
+  require 'custom.plugins.codecompanion'
+  require 'custom.plugins.markdown'
 
   -- NOTE: You can add your own plugins, configuration, etc. in `lua/custom/plugins/*.lua`.
   --
